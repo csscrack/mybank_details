@@ -8,13 +8,9 @@
                 <Button id="refreshBtn" type="Emphasized" text="{i18n>home}" />
             </headerContent>
             <content>
+                <!-- Bank Details Fragment -->
                 <core:Fragment id="bankDetailsFrgment" fragmentName="com.sap.mybankdetails.view.fragments.BankDetails" type="XML" />
-                <Button id="openBankDetails" 
-                          type="Neutral" 
-                          text="{i18n>findMoreBtn}" 
-                          class="sapUiSmallMarginBegin" 
-                          press=".onOpenBankDetails"
-                          />
+                
             </content>
 
         </Page>
