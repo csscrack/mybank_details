@@ -5,6 +5,29 @@ sap.ui.define([
 
     return Controller.extend("com.sap.mybankdetails.controller.App", {
         onInit() {
+
+
+            let oData = {
+                bankDetails:{
+                    accountNmbr: "87654331233112",
+                    name: "Rohit Sharma G",
+                    ifsc: "00000065",
+                    customerId: "Cust0096",
+                    address:{
+                        houseNumber: "00001",
+                        street: "Wall Street",
+                        city: "Anantapur",
+                        state: "Andhra Pradesh",
+                        country: "India",
+                        postalCode: "515001"
+                    } 
+                }
+            }
+
+            let oModel = new sap.ui.model.json.JSONModel();
+            oModel.setData(oData);
+            this.getView().setModel(oModel);
+
             // debugger;
             /* Cheking broswer language and setting the global resource model*/
             // if (navigator.language == "es") {

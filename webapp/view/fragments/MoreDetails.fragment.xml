@@ -1,26 +1,26 @@
 <core:FragmentDefinition xmlns="sap.m"
     xmlns:core="sap.ui.core">
     <Dialog id="moreBankDetails" title="{i18n>confiDetails}">
-        <VBox id="vBox" class="sapUiSmallMargin">
+        <VBox id="vBox" binding="{/bankDetails}" class="sapUiSmallMargin">
             <HBox id="hBox">
                 <Label id="lblAccnbr" text="{i18n>accNumber}" class="sapUiSmallMarginEnd"/>
-                <Text id="accvalue" text="00288**********" />
+                <Text id="accvalue" text="{accountNmbr}" />
             </HBox>
             <HBox id="hBoxx">
                 <Label id="lbAccHolderName" text="{i18n>accHolderName}" class="sapUiSmallMarginEnd"/>
-                <Text id="accHolderNameValue" text="Sai Shankar Chaleendram" />
+                <Text id="accHolderNameValue" text="{name}" />
             </HBox>
             <HBox id="hBoxxx">
                 <Label id="lbIfsc" text="{i18n>iFSCode}" class="sapUiSmallMarginEnd"/>
-                <Text id="ifscValue" text="00001300" />
+                <Text id="ifscValue" text="{ifsc}" />
             </HBox>
             <HBox id="hBoxxxx">
                 <Label id="lbCustomerId" text="{i18n>custID}" class="sapUiSmallMarginEnd"/>
-                <Text id="customerIdValue" text="Sai Shankar Chaleendram" />
+                <Text id="customerIdValue" text="{customerId}" />
             </HBox>
             <HBox id="hBoxxxxxx">
                 <Label id="lblAddess" text="{i18n>address}" class="sapUiSmallMarginEnd"/>
-                <Text id="address" text="Anantapur, Andhra Prades" />
+                <Text id="address" text="{address/houseNumber}, {address/street}, {address/city}, {address/state}, {address/country}, {address/postalCode}" />
             </HBox>
         </VBox>
         <beginButton>
