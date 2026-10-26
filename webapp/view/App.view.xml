@@ -10,7 +10,18 @@
             <content>
                 <!-- Bank Details Fragment -->
                 <core:Fragment id="bankDetailsFrgment" fragmentName="com.sap.mybankdetails.view.fragments.BankDetails" type="XML" />
-                
+
+                <Panel id="pCard" expandable="true" headerText="Card Details" width="auto" class="sapUiResponsiveMargin">
+                    <content>
+                        <List id="myList" items="" width="50%">
+                            <items>
+                                <StandardListItem id="card1" title="Master Card (1234567899098677)" description="Debit Card: assigned on 23 Feb 2025" icon="sap-icon://credit-card" iconInset="false" highlight="Information" info="Active" infoState="Information" infoStateInverted="true" />
+                                <StandardListItem id="card2" title="Visa Card (8775678990676633)" description="Credit Card: assigned on 22 Dec 2026" icon="sap-icon://credit-card" iconInset="false" highlight="Error" info="Expired" infoState="Error" infoStateInverted="true" />
+                                <StandardListItem id="card3" title="Master Card (123456789909827652)" description="Debit Card: assigned on 10 Aug 2025" icon="sap-icon://credit-card" iconInset="false" highlight="Success" info="Active" infoState="Success" infoStateInverted="true" />
+                            </items>
+                        </List>
+                    </content>
+                </Panel>
             </content>
 
         </Page>
