@@ -10,6 +10,12 @@
     "title": "{{appTitle}}",
     "description": "{{appDescription}}",
     "resources": "resources.json",
+    "dataSources": {
+      "JsonModel": {
+        "uri": "model/bankdetails.json",
+        "type": "JSON"
+      }
+    },
     "sourceTemplate": {
       "id": "@sap/generator-fiori:basic",
       "version": "1.33.0",
@@ -57,6 +63,10 @@
         "settings": {
           "bundleName": "com.sap.mybankdetails.i18n.i18n_es"
         }
+      },
+      "oBankDetails": {
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "JsonModel"
       }
     },
     "resources": {
