@@ -1,26 +1,32 @@
 <core:FragmentDefinition xmlns="sap.m"
     xmlns:core="sap.ui.core">
     <Dialog id="moreBankDetails" title="{i18n>confiDetails}">
-        <VBox id="vBox" binding="{/bankDetails}" class="sapUiSmallMargin">
+        <VBox id="vBox" binding="{oBankDetails>/accountDetails}" class="sapUiSmallMargin">
             <HBox id="hBox">
                 <Label id="lblAccnbr" text="{i18n>accNumber}" class="sapUiSmallMarginEnd"/>
-                <Text id="accvalue" text="{accountNmbr}" />
+                <Text id="accvalue" text="{oBankDetails>accountNmbr}" />
             </HBox>
             <HBox id="hBoxx">
                 <Label id="lbAccHolderName" text="{i18n>accHolderName}" class="sapUiSmallMarginEnd"/>
-                <Text id="accHolderNameValue" text="{name}" />
+                <Text id="accHolderNameValue" text="{oBankDetails>name}" />
             </HBox>
             <HBox id="hBoxxx">
                 <Label id="lbIfsc" text="{i18n>iFSCode}" class="sapUiSmallMarginEnd"/>
-                <Text id="ifscValue" text="{ifsc}" />
+                <Text id="ifscValue" text="{oBankDetails>ifsc}" />
             </HBox>
             <HBox id="hBoxxxx">
                 <Label id="lbCustomerId" text="{i18n>custID}" class="sapUiSmallMarginEnd"/>
-                <Text id="customerIdValue" text="{customerId}" />
+                <Text id="customerIdValue" text="{oBankDetails>customerId}" />
             </HBox>
             <HBox id="hBoxxxxxx">
                 <Label id="lblAddess" text="{i18n>address}" class="sapUiSmallMarginEnd"/>
-                <Text id="address" text="{address/houseNumber}, {address/street}, {address/city}, {address/state}, {address/country}, {address/postalCode}" />
+                <Text id="address" 
+                    text="{=${oBankDetails>address/houseNumber} + ', ' +
+                 ${oBankDetails>address/street} + ', ' +
+                 ${oBankDetails>address/city} + ', ' +
+                 ${oBankDetails>address/state} + ', ' +
+                 ${oBankDetails>address/country} + ', ' +
+                 ${oBankDetails>address/postalCode} }"/>
             </HBox>
         </VBox>
         <beginButton>
