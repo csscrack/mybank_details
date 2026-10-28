@@ -1,9 +1,11 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
-], (Controller) => {
+    "sap/ui/core/mvc/Controller",
+    "../model/formatter"
+], (Controller, formatter) => {
     "use strict";
 
     return Controller.extend("com.sap.mybankdetails.controller.App", {
+        formatter: formatter,
         onInit() {
 
             /* Setting Global JSON Model */
@@ -37,6 +39,14 @@ sap.ui.define([
                 { profile: sap.ui.require.toUrl("com/sap/mybankdetails/images/csscrackProfile.png") })
             this.getView().setModel(oProfileModel);
         },
+        onSelectionChanged: function (oEvent) {
+            // debugger;
+			var oSegment = oEvent.getParameter("segment");
+            let percentageVal =  oSegment.getValue();
+            let empSalary = this.getOwnerComponent().getModel('oBankDetails').getProperty("/empSalary");
+			sap.m.MessageToast.show(oSegment.getLabel() + " : " + 
+            ((percentageVal > 50) ? "Critical" : "Moderate"));
+		},
 
         _setGlobalModel: function () {             // If data is not getting from model then get data from model to controller then utilise.
             let oModel = this.getOwnerComponent().getModel("oBankDetails");
